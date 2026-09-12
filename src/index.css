@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Industrial Cyber-Glassmorphism Styles */
+:root {
+  --bg-slate: #0A0E17;
+  --glass-bg: rgba(15, 23, 42, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.04);
+  --neon-cyan: #06B6D4;
+  --neon-emerald: #10B981;
+  --neon-amber: #F59E0B;
+  --neon-crimson: #EF4444;
+  --electric-blue: #3B82F6;
+  --neon-violet: #8B5CF6;
+}
+
+body {
+  background-color: var(--bg-slate);
+  color: #e2e8f0;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.07) 0%, transparent 60%),
+    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Glass Container Utilities */
+.cyber-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 var(--glass-highlight);
+  border-radius: 0.75rem;
+  position: relative;
+}
+
+.cyber-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  pointer-events: none;
+}
+
+/* Reticle Corner Brackets for Industrial Telemetry Feel */
+.corner-bracket {
+  position: relative;
+}
+.corner-bracket::before, .corner-bracket::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  pointer-events: none;
+  border-color: rgba(6, 182, 212, 0.4);
+}
+.corner-bracket::before {
+  top: -1px; left: -1px;
+  border-top: 1px solid; border-left: 1px solid;
+}
+.corner-bracket::after {
+  bottom: -1px; right: -1px;
+  border-bottom: 1px solid; border-right: 1px solid;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0E17;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Zero Jitter Tabular Digits */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Canvas styling */
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Scanline Overlay */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* Glow utilities */
+.glow-text-cyan { text-shadow: 0 0 10px rgba(6, 182, 212, 0.6); }
+.glow-text-emerald { text-shadow: 0 0 10px rgba(16, 185, 129, 0.6); }
+.glow-text-amber { text-shadow: 0 0 10px rgba(245, 158, 11, 0.6); }
+.glow-text-crimson { text-shadow: 0 0 12px rgba(239, 68, 68, 0.8); }
+
+/* Animated Hazard Stripes */
+.hazard-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(239, 68, 68, 0.15),
+    rgba(239, 68, 68, 0.15) 12px,
+    rgba(15, 23, 42, 0.3) 12px,
+    rgba(15, 23, 42, 0.3) 24px
+  );
+}
